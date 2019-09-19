@@ -19,8 +19,8 @@ plugins {
     id "io.freefair.github.package-registry-maven-publish" version "4.1.0"
 }
 
-group 'com.markiian.benovskyi'
-version '0.5.1'
+group pluginGroupId
+version pluginVersion
 
 sourceCompatibility = 1.8
 
@@ -34,18 +34,16 @@ dependencies {
 
 github {
     slug
-    username
-    token
-    tag = 'HEAD'
-    travis = true
+    username = pluginGithubUsername
+    token = pluginGithubToken
 }
 
 publishing {
     publications {
         create(MavenPublication) {
-            groupId = "com.markiian.benovskyi"
-            artifactId = "regex.text.tokenizer"
-            version = "0.5.1"
+            groupId = pluginGroupId
+            artifactId = pluginArtifactId
+            version = pluginVersion
 
             from components.java
         }
