@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="custom-regex-tokenizer.main" target="1.8" />
+      <module name="custom-regex-tokenizer.test" target="1.8" />
+      <module name="custom-text-tokenizer.main" target="1.8" />
+      <module name="custom-text-tokenizer.test" target="1.8" />
+      <module name="yggdrasill-tokeniser.main" target="1.8" />
+      <module name="yggdrasill-tokeniser.test" target="1.8" />
+      <module name="yggdrasill-tokenizer.main" target="1.8" />
+      <module name="yggdrasill-tokenizer.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

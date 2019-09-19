@@ -1,0 +1,53 @@
+/*
+ * Copyright (c) 2019. Markiian Benovskyi .
+ *
+ * IN NO EVENT SHALL MARKIIAN BENOVSKYI BE LIABLE TO ANY PARTY FOR DIRECT,
+ * INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, INCLUDING LOST
+ * PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION,
+ * EVEN IF MARKIIAN BENOVSKYI HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * MARKIIAN BENOVSKYI SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT
+ * NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+ * PARTICULAR PURPOSE. THE SOFTWARE AND ACCOMPANYING DOCUMENTATION, IF
+ * ANY, PROVIDED HEREUNDER IS PROVIDED "AS IS". MARKIIAN BENOVSKYI HAS NO
+ * OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR
+ * MODIFICATIONS.
+ */
+
+plugins {
+    id 'java'
+    id "io.freefair.github.package-registry-maven-publish" version "4.1.0"
+}
+
+group 'com.markiian.benovskyi'
+version '0.5.1'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+
+github {
+    slug
+    username
+    token
+    tag = 'HEAD'
+    travis = true
+}
+
+publishing {
+    publications {
+        create(MavenPublication) {
+            groupId = "com.markiian.benovskyi"
+            artifactId = "regex.text.tokenizer"
+            version = "0.5.1"
+
+            from components.java
+        }
+    }
+}
